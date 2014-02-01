@@ -1,0 +1,31 @@
+{
+  "name": "bigmoney.js",
+  "version": "0.0.1",
+  "description": "Library for handling the money values. Based on big.js library for arbitrary-precision decimal arithmetic. Support multiple currencies.",
+  "main": "bigmoney.js",
+  "directories": {
+    "example": "examples"
+  },
+  "dependencies": {
+    "big.js": "~2.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/demchenkoe/bigmoney.js"
+  },
+  "keywords": [
+    "money",
+    "currency",
+    "calc",
+    "js",
+    "javascipt",
+    "float",
+    "math"
+  ],
+  "author": "Eugene Demchenko (it-bm@mail.ru)",
+  "license": "BSD"
+}
