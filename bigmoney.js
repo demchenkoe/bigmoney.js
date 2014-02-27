@@ -102,6 +102,56 @@
     }
 
     /**
+     * Allocates amounts of money in an array so that you won't loose cents
+     * @param ratios {Number} How many parts you want to divide the initial amount.
+     * @returns {*}
+     */
+
+    function sum(a, b) {
+        return a + b;
+    }
+
+    function ones(len) {
+        var arr = [];
+        for (var i = 0; i < len; i++) {
+            arr.push(1);
+        };
+
+        return arr;
+    }
+
+    Money.prototype.allocate = function(ratios) {
+        if(typeof ratios === 'undefined') {
+            return [this];
+        } else if(typeof ratios === 'number') {
+            ratios = ones(ratios);
+        }
+
+        var amount = this,
+            remainder = amount,
+            total = ratios.reduce(sum),
+            results = [],
+            current = 0;
+
+        ratios.forEach(function(ratio, index) {
+            results.push(amount.times(ratio).div(total));
+            remainder = remainder.minus(results[index]);
+        });
+
+        while(!remainder.eq(0)) {
+            results[current] = results[current++].plus(0.01 * remainder.val.s);
+
+            if(current >= results.length) {
+                current = 0;
+            }
+
+            remainder = remainder.plus(0.01 * remainder.val.s * -1);
+        }
+
+        return results;
+    }
+
+    /**
      * Convert to over currency
      * @param to {String} Destination currency. Default is a settings.base currency.
      * @returns {*}

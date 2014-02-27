@@ -52,3 +52,19 @@ console.log( usd.minus(100).valueOf() );  //34.85
 console.log( usd.times(2).valueOf() );  //269.7
 console.log( usd.div(2).valueOf() );  //67.43
 console.log( usd.mod(1).valueOf() );  //0.85
+
+//allocates money
+new Money(100).allocate(3).forEach(function(payment) {
+    //five payments of "same value"
+    console.log(payment.format());
+});
+
+new Money(100).allocate([1, 1, 1]).forEach(function(payment) {
+    //three equal payments, same as ".allocate(3);" (above example)
+    console.log(payment.format());
+});
+
+new Money(100).allocate([1, 2, 1]).forEach(function(payment) {
+  //three payments, 25% then 50% then 25%
+    console.log(payment.format());
+});
