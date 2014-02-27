@@ -1,6 +1,6 @@
 {
   "name": "bigmoney.js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Library for handling the money values. Based on big.js library for arbitrary-precision decimal arithmetic. Support multiple currencies.",
   "main": "bigmoney.js",
   "directories": {
@@ -17,6 +17,11 @@
     "type": "git",
     "url": "https://github.com/demchenkoe/bigmoney.js"
   },
+  "contributors": [{
+    "name" : "Renato Gama",
+    "email" : "renato@gammasoft.com.br",
+    "url" : "http://github.com/renatoargh"
+  }],
   "keywords": [
     "money",
     "currency",
