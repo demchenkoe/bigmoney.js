@@ -184,7 +184,7 @@
      */
 
     Money.prototype.valueOf = function () {
-        return parseFloat(this.val.toFixed(2));
+        return parseFloat(this.val.round(2).valueOf());
     }
 
     /**
@@ -193,7 +193,7 @@
      */
 
     Money.prototype.toString = function () {
-        return this.val.toFixed(2);
+        return this.val.round(2).valueOf();
     }
 
     /**
