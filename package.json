@@ -1,6 +1,6 @@
 {
   "name": "bigmoney.js",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Library for handling the money values. Based on big.js library for arbitrary-precision decimal arithmetic. Support multiple currencies.",
   "main": "bigmoney.js",
   "directories": {
