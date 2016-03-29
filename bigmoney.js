@@ -43,63 +43,63 @@
 
     Money.prototype.abs = function () {
         return Money(this.val.abs.apply(this.val, arguments), this.currency, this.options);
-    }
+    };
 
     Money.prototype.cmp = function () {
         return this.val.cmp.apply(this.val, arguments);
-    }
+    };
 
     Money.prototype.div = function () {
         return Money(this.val.div.apply(this.val, arguments), this.currency, this.options);
-    }
+    };
 
     Money.prototype.eq = function () {
         return this.val.eq.apply(this.val, arguments);
-    }
+    };
 
     Money.prototype.gt = function () {
         return this.val.gt.apply(this.val, arguments);
-    }
+    };
 
     Money.prototype.gte = function () {
         return this.val.gte.apply(this.val, arguments);
-    }
+    };
 
     Money.prototype.lt = function () {
         return this.val.lt.apply(this.val, arguments);
-    }
+    };
 
     Money.prototype.lte = function () {
         return this.val.lte.apply(this.val, arguments);
-    }
+    };
 
     Money.prototype.minus = function () {
         return Money(this.val.minus.apply(this.val, arguments), this.currency, this.options);
-    }
+    };
 
     Money.prototype.mod = function () {
         return Money(this.val.mod.apply(this.val, arguments), this.currency, this.options);
-    }
+    };
 
     Money.prototype.plus = function () {
         return Money(this.val.plus.apply(this.val, arguments), this.currency, this.options);
-    }
+    };
 
     Money.prototype.pow = function () {
         return this.val.pow.apply(this.val, arguments);
-    }
+    };
 
     Money.prototype.round = function () {
         return Money(this.val.round.apply(this.val, arguments), this.currency, this.options);
-    }
+    };
 
     Money.prototype.sqrt = function () {
         return Money(this.val.sqrt.apply(this.val, arguments), this.currency, this.options);
-    }
+    };
 
     Money.prototype.times = function () {
         return Money(this.val.times.apply(this.val, arguments), this.currency, this.options);
-    }
+    };
 
     /**
      * Allocates amounts of money in an array so that you won't loose cents
@@ -115,7 +115,7 @@
         var arr = [];
         for (var i = 0; i < len; i++) {
             arr.push(1);
-        };
+        }
 
         return arr;
     }
@@ -149,7 +149,7 @@
         }
 
         return results;
-    }
+    };
 
     /**
      * Convert to over currency
@@ -176,7 +176,7 @@
         else {
             return (this.convert(Money.settings.base)).convert(to);
         }
-    }
+    };
 
     /**
      * Return value as number
@@ -185,7 +185,7 @@
 
     Money.prototype.valueOf = function () {
         return parseFloat(this.val.toFixed(2));
-    }
+    };
 
     /**
      * Return value as string
@@ -194,7 +194,7 @@
 
     Money.prototype.toString = function () {
         return this.val.toFixed(2);
-    }
+    };
 
     /**
      * Return formatted string
@@ -203,11 +203,11 @@
 
     Money.prototype.format = function (formatTemplate) {
         return Money.formatter(this.valueOf(), this.currency, formatTemplate);
-    }
+    };
 
     Money.isValidCurrency = function (curr) {
         return typeof Money.settings.rates[curr] === 'number';
-    }
+    };
 
     Money.settings = settings;
     Money.formatter = function(decimal, currency, formatTemplate)   {
@@ -219,13 +219,13 @@
 
     // Node and other CommonJS-like environments that support module.exports.
     if ( typeof module !== 'undefined' && module.exports ) {
-        module.exports = Money
+        module.exports = Money;
 
         //AMD.
     } else if ( typeof define == 'function' && define.amd ) {
         define( function () {
             return Money
-        })
+        });
 
         //Browser.
     } else {
